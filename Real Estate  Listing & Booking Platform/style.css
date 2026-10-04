@@ -1,0 +1,454 @@
+  ```css * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+  }
+
+  html {
+      scroll-behavior: smooth;
+  }
+
+  body {
+      background: #f5f7fb;
+      color: #222;
+  }
+
+
+  /* Header */
+
+  header {
+      background: #0f172a;
+      color: white;
+
+      padding: 18px 8%;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      position: sticky;
+      top: 0;
+
+      z-index: 1000;
+  }
+
+  .logo {
+      font-size: 25px;
+      font-weight: bold;
+  }
+
+  nav {
+      display: flex;
+      gap: 25px;
+  }
+
+  nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+  }
+
+  nav a:hover {
+      color: #38bdf8;
+  }
+
+
+  /* Hero */
+
+  .hero {
+      min-height: 450px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      text-align: center;
+
+      color: white;
+
+      background:
+          linear-gradient(rgba(15, 23, 42, 0.75),
+              rgba(15, 23, 42, 0.75)),
+          url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c") center/cover;
+  }
+
+  .hero-content {
+      max-width: 800px;
+  }
+
+  .hero h1 {
+      font-size: 50px;
+      margin-bottom: 20px;
+  }
+
+  .hero p {
+      font-size: 20px;
+      margin-bottom: 30px;
+  }
+
+  .hero-btn {
+      display: inline-block;
+
+      background: #0ea5e9;
+      color: white;
+
+      padding: 14px 25px;
+
+      border-radius: 8px;
+
+      text-decoration: none;
+
+      font-weight: bold;
+  }
+
+  .hero-btn:hover {
+      background: #0284c7;
+  }
+
+
+  /* Statistics */
+
+  .stats {
+      display: grid;
+
+      grid-template-columns: repeat(4, 1fr);
+
+      gap: 20px;
+
+      padding: 40px 8%;
+  }
+
+  .stat-card {
+      background: white;
+
+      padding: 25px;
+
+      text-align: center;
+
+      border-radius: 12px;
+
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  }
+
+  .stat-card h2 {
+      font-size: 32px;
+      color: #0284c7;
+  }
+
+  .stat-card p {
+      margin-top: 8px;
+      color: #555;
+  }
+
+
+  /* Properties */
+
+  .properties-section {
+      padding: 50px 8%;
+  }
+
+  .properties-section h2,
+  .booking-section h2,
+  .about h2 {
+      text-align: center;
+
+      font-size: 32px;
+
+      margin-bottom: 30px;
+  }
+
+
+  /* Filters */
+
+  .filters {
+      display: grid;
+
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+
+      gap: 15px;
+
+      margin-bottom: 35px;
+  }
+
+  .filters input,
+  .filters select {
+      padding: 13px;
+
+      border: 1px solid #ccc;
+
+      border-radius: 7px;
+
+      font-size: 15px;
+
+      background: white;
+  }
+
+
+  /* Property Cards */
+
+  .property-container {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 25px;
+  }
+
+  .property-card {
+      background: white;
+
+      border-radius: 12px;
+
+      overflow: hidden;
+
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+
+      transition: 0.3s;
+  }
+
+  .property-card:hover {
+      transform: translateY(-6px);
+
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  .property-image {
+      width: 100%;
+
+      height: 220px;
+
+      object-fit: cover;
+  }
+
+  .property-info {
+      padding: 20px;
+  }
+
+  .property-info h3 {
+      color: #0f172a;
+
+      margin-bottom: 10px;
+  }
+
+  .location {
+      color: #64748b;
+
+      margin-bottom: 10px;
+  }
+
+  .price {
+      color: #0284c7;
+
+      font-size: 22px;
+
+      font-weight: bold;
+
+      margin-bottom: 10px;
+  }
+
+  .details {
+      color: #555;
+
+      margin-bottom: 15px;
+
+      line-height: 1.6;
+  }
+
+  .property-buttons {
+      display: flex;
+
+      gap: 10px;
+  }
+
+  .book-btn,
+  .favorite-btn {
+      border: none;
+
+      padding: 10px;
+
+      border-radius: 6px;
+
+      cursor: pointer;
+
+      font-weight: bold;
+  }
+
+  .book-btn {
+      flex: 1;
+
+      background: #0284c7;
+
+      color: white;
+  }
+
+  .book-btn:hover {
+      background: #0369a1;
+  }
+
+  .favorite-btn {
+      width: 45px;
+
+      background: #fee2e2;
+
+      color: #dc2626;
+
+      font-size: 18px;
+  }
+
+  .favorite-btn.active {
+      background: #dc2626;
+
+      color: white;
+  }
+
+
+  /* Booking */
+
+  .booking-section {
+      background: white;
+
+      padding: 60px 8%;
+  }
+
+  form {
+      max-width: 650px;
+
+      margin: auto;
+  }
+
+  .form-group {
+      margin-bottom: 20px;
+  }
+
+  .form-group label {
+      display: block;
+
+      margin-bottom: 8px;
+
+      font-weight: bold;
+  }
+
+  .form-group input,
+  .form-group select {
+      width: 100%;
+
+      padding: 13px;
+
+      border: 1px solid #ccc;
+
+      border-radius: 7px;
+
+      font-size: 15px;
+  }
+
+  .booking-btn {
+      width: 100%;
+
+      padding: 14px;
+
+      background: #0284c7;
+
+      color: white;
+
+      border: none;
+
+      border-radius: 7px;
+
+      font-size: 16px;
+
+      font-weight: bold;
+
+      cursor: pointer;
+  }
+
+  .booking-btn:hover {
+      background: #0369a1;
+  }
+
+
+  /* About */
+
+  .about {
+      padding: 60px 15%;
+
+      text-align: center;
+  }
+
+  .about p {
+      line-height: 1.8;
+
+      color: #555;
+
+      font-size: 17px;
+  }
+
+
+  /* Footer */
+
+  footer {
+      background: #0f172a;
+
+      color: white;
+
+      text-align: center;
+
+      padding: 30px;
+
+      line-height: 1.8;
+  }
+
+
+  /* Responsive */
+
+  @media (max-width: 900px) {
+
+      .stats {
+          grid-template-columns: repeat(2, 1fr);
+      }
+
+      .property-container {
+          grid-template-columns: repeat(2, 1fr);
+      }
+
+      .filters {
+          grid-template-columns: 1fr 1fr;
+      }
+
+  }
+
+  @media (max-width: 600px) {
+
+      header {
+          flex-direction: column;
+
+          gap: 15px;
+      }
+
+      nav {
+          gap: 12px;
+
+          flex-wrap: wrap;
+
+          justify-content: center;
+      }
+
+      .hero h1 {
+          font-size: 35px;
+      }
+
+      .stats {
+          grid-template-columns: 1fr;
+      }
+
+      .property-container {
+          grid-template-columns: 1fr;
+      }
+
+      .filters {
+          grid-template-columns: 1fr;
+      }
+
+  }
+
+  ```
